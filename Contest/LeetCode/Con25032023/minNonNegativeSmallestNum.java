@@ -1,4 +1,5 @@
 package Contest.LeetCode.Con25032023;
+import java.util.*;;
 
 public class minNonNegativeSmallestNum {
     public int findSmallestInteger(int[] nums, int value) {
@@ -24,4 +25,8 @@ public class minNonNegativeSmallestNum {
        
         return mex;
     }
-}
+
+    public static void main(String[] args) {
+        
+    }
+} 
