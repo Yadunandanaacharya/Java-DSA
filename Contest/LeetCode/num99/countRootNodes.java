@@ -14,9 +14,9 @@ public class countRootNodes {
 
     Set<List<Integer>> setGuess;
     
-    void dfs(int node, int par, List<Integer>[] tree, List<Integer> dp) {
+    void dfs(int node, int parent, List<Integer>[] tree, List<Integer> dp) {
         for (int i : tree[node]) {
-            if (i != par) {
+            if (i != parent) {
                 if (setGuess.contains(Arrays.asList(node, i)))
                      
                 dfs(i, node, tree, dp);
@@ -25,10 +25,10 @@ public class countRootNodes {
         }
     }
     
-    void dfs0(int node, int par, List<Integer>[] tree, List<Integer> dp, List<Integer> ans) {
+    void dfs0(int node, int parent, List<Integer>[] tree, List<Integer> dp, List<Integer> ans) {
         ans.set(node, dp.get(node));
         for (int i : tree[node]) {
-            if (i != par) {
+            if (i != parent) {
                 int ch1 = setGuess.contains(Arrays.asList(node, i)) ? 1 : 0;
                 int ch2 = setGuess.contains(Arrays.asList(i, node)) ? 1 : 0;
                 
@@ -69,7 +69,6 @@ public class countRootNodes {
         }
         return ret;
     }
-
 }
 
 
