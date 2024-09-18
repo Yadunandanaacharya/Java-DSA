@@ -2,7 +2,7 @@ package Contest.LeetCode.contest26032023;
 import java.util.*;;
 
 public class collectTheCoins {
-    public int collectTheCoins(int[] coins, int[][] edges) {
+    public int collectTheCoinss(int[] coins, int[][] edges) {
         int n = coins.length;
         List<Set<Integer>> adj = new ArrayList<>();
 
