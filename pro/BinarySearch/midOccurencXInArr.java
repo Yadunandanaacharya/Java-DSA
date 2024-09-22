@@ -44,4 +44,23 @@ public class midOccurencXInArr {
         int retans = (ans[0] + ans[1]) / 2;
         System.out.println("retans " + retans);
     }
+
+    
 }
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
