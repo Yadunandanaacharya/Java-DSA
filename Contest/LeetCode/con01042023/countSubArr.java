@@ -26,3 +26,4 @@ public class countSubArr {
         return ans;
     }
 }
+
