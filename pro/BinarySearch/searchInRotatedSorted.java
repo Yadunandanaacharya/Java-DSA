@@ -31,9 +31,11 @@ public  class searchInRotatedSorted {
     
         return -1;
     }
-
+    
     public static void main(String[] args) {
         int[] arr = new int[]{10, 12,  15,  20,  25,  30,  0,  1,   4,  8};
         System.out.println(search(arr,0));
     }
 }
+ 
+
