@@ -6,9 +6,7 @@ package Step4.twoPointer;
 
  */
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class countSubArrayDistintctLessThanEqualK {
     public static void main(String[] args) {
