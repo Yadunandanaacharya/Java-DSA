@@ -1,4 +1,4 @@
-package Contest.LeetCode.Con25032023;
+package Contest.LeetCode.con25032023;
 
 public class knightTour {
     public static boolean checkValidGrid(int[][] grid) {

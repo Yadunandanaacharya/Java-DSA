@@ -1,4 +1,4 @@
-package Contest.LeetCode.contest26032023;
+package Contest.LeetCode.con26032023;
 
 //Sieve of Eratosthenes
 public class primeTillNOptimized {

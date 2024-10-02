@@ -73,18 +73,6 @@ public class kthLargestWrittenByMe {
         return root;
     }
 
-    public class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int val) {
-            this.val = val;
-            this.left = null;
-            this.right = null;
-        }
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -119,4 +107,17 @@ public class kthLargestWrittenByMe {
 
         sc.close();
     }
+
+    public class TreeNode {
+        int val;
+        TreeNode left;
+        TreeNode right;
+    
+        TreeNode(int val) {
+            this.val = val;
+            this.left = null;
+            this.right = null;
+        }
+    }
 }
+
