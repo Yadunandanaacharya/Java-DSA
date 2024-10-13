@@ -5,7 +5,6 @@ public class minTimeRepairCars {
         long l = 0;
         long r = (long)1e14;
         while (l<=r) {
-            // long mid = l + (r-1)/2;
             long mid = (l+r)/2;
             long car = 0;
             for(int i : ranks){
