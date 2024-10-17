@@ -12,8 +12,9 @@ public class knightTour {
         // Store the positions (coordinates) of each number in the array 'ijArr'
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                ijArr[grid[i][j]][0] = i; // Row of the current number
-                ijArr[grid[i][j]][1] = j; // Column of the current number
+                int gridValIndx = grid[i][j];
+                ijArr[gridValIndx][0] = i; // Row of the current number
+                ijArr[gridValIndx][1] = j; // Column of the current number
             }
         }
 

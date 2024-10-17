@@ -6,23 +6,23 @@ public class waysToEarnPoints {
     static long[][] dp;
     static long mod = 1000000007; // in question written to return ans mod (10^9+7)
 
-    static long knapSack(int i, int target, int[][] types) {
+    static long knapSack(int indx, int target, int[][] types) {
         if (target == 0) {
             return 1;
         }
-        if (i >= types.length) {
+        if (indx >= types.length) {
             return 0;
         }
-        if (dp[target][i] != -1) {
-            return dp[target][i];
+        if (dp[target][indx] != -1) {
+            return dp[target][indx];
         }
         long ans = 0;
-        for (int count = 0; count <= types[i][0]; count++) {
-            if (target - types[i][1] * count >= 0) {
-                ans = (ans + knapSack(i + 1, target - types[i][1] * count, types)) % mod;
+        for (int count = 0; count <= types[indx][0]; count++) {
+            if (target - types[indx][1] * count >= 0) {
+                ans = (ans + knapSack(indx + 1, target - types[indx][1] * count, types)) % mod;
             }
         }
-        dp[target][i] = ans;
+        dp[target][indx] = ans;
         return ans;
     }
 
