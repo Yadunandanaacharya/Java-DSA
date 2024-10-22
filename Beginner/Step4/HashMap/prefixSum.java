@@ -1,4 +1,4 @@
-
+package Step4.HashMap;
 public class prefixSum {
     public static int[] calculatePrefixSum(int[] arr) {
         int[] prefixSum = new int[arr.length];
