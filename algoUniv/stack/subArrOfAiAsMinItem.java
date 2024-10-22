@@ -35,7 +35,7 @@ public class subArrOfAiAsMinItem {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
- 
+        
         int[] leftRange = new int[n];
         int[] rightRange = new int[n];
         findLeftRange(arr, leftRange, n);
@@ -48,3 +48,9 @@ public class subArrOfAiAsMinItem {
         scanner.close();
     }
 }
+
+
+
+
+
+

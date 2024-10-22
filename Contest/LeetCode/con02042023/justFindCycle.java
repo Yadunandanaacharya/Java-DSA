@@ -1,42 +1,58 @@
 package Contest.LeetCode.con02042023;
+import java.util.*;
+
 
 public class justFindCycle {
-    public int bfs(int i, List<List<Integer>> graph, int[] vis){
+    static int n = 4;
+    static int[] vis = new int[n];
+    public static boolean bfs(int i, List<List<Integer>> graph, int[] vis){
         int[] dis = new int[vis.length];
         Arrays.fill(dis, 1_000_000_000);
         dis[i] = 0;
         Queue<Integer> q = new LinkedList<>();
         q.offer(i);
         while (!q.isEmpty()) {
-            int node = q.poll(); 
-            for (int j : graph.get(node)) {
-                if (dis[j] == 1_000_000_000) {
-                    dis[j] = 1 + dis[node];
-                    q.offer(j);
-                } else if (dis[node] <= dis[j]) {
-                    return dis[node] + dis[j] + 1;
+            int parent = q.poll(); 
+            for (int child : graph.get(parent)) {
+                if (dis[child] == 1_000_000_000) {
+                    dis[child] = 1 + dis[parent];
+                    q.offer(child);
+                } else if (dis[parent] <= dis[child]) {
+                    return true;
                 }
             }
         }
-        return 1_000_000_000;
+        return false;
     }
     
-    public int findShortestCycle(int n, int[][] edges) {
-        List<List<Integer>> graph = new ArrayList<>();
-        for (int i = 0; i < n; i++) {
-            graph.add(new ArrayList<>());
+    public static void main(String[] args) {
+        int V = 4;
+        List<List<Integer>> adj = new ArrayList<>();
+
+        // Initialize adjacency list
+        for (int i = 0; i < V; i++) {
+            adj.add(new ArrayList<>());
         }
-        int[] vis = new int[n];
-        for (int[] edge : edges) {
-            graph.get(edge[0]).add(edge[1]);
-            graph.get(edge[1]).add(edge[0]);
-        }
-        int ans = 1_000_000_000;
+
+        // Adding edges to the graph
+        adj.get(0).add(1);
+        adj.get(0).add(2);
+        adj.get(1).add(2);
+        adj.get(2).add(0);
+        adj.get(2).add(3);
+        adj.get(3).add(3);
+
+        boolean ans = false;
         for (int i = 0; i < n; i++) {
-            if (vis[i] == 0) {
-                ans = Math.min(ans, bfs(i, graph, vis));
+            if (vis[i] == 0 && bfs(i, adj, vis) == true) {
+                ans = true;
+                break;
             }
         }
-        return ans == 1_000_000_000 ? -1 : ans;
     }
 }
+
+
+
+
+

@@ -1,4 +1,4 @@
-
+package Step4.HashMap;
 import java.util.Scanner;
 
 public class session7CumuSum {

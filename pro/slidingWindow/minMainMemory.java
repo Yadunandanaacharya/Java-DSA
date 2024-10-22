@@ -17,9 +17,9 @@ public class minMainMemory {
             totalSum += arr[i];
         }
 
-        maxSumWindowM = maximumSumSubarray(m, arr, arr.length);
-        finalAns = totalSum - maxSumWindowM;
-        System.out.println(finalAns);
+        // maxSumWindowM = maximumSumSubarray(m, arr, arr.length);
+        // finalAns = totalSum - maxSumWindowM;
+        // System.out.println(finalAns);
     }
 
 }

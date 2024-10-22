@@ -1,3 +1,4 @@
+package Step4.HashMap;
 import java.util.*;
 
 public class DuplicateKDist {

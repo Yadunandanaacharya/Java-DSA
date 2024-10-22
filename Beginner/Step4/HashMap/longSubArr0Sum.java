@@ -1,4 +1,4 @@
-
+package Step4.HashMap;
 import java.util.*;
 /*
 Input: arr[] = {15, -2, 2, -8, 1, 7, 10, 23}
