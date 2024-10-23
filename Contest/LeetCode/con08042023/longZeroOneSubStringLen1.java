@@ -55,7 +55,9 @@ public  class longZeroOneSubStringLen1 {
     }
 
     public static void main(String[] args){
-        String str = "01000111";
+        String str = "001";
         System.out.println(FindLongZeroOneSubStringLen(str));
     }
 }
+
+
