@@ -17,9 +17,9 @@ public class meetingAssistant {
         return v;
     }
 
-    public static void convertMinutesToHours(int g) {
-        int u = g / 60;
-        int y = g % 60;
+    public static void convertMinutesToHours(int ansFound) {
+        int u = ansFound / 60;
+        int y = ansFound % 60;
 
         if (u <= 9) {
             System.out.print("0");
@@ -63,11 +63,11 @@ public class meetingAssistant {
             String v1 = parts[0]; // First part
             String v5 = parts[1]; // Second part
 
-            int t1 = convertStringHourToIntAndMinutes(v1);
-            int t5 = convertStringHourToIntAndMinutes(v5);
+            int startTime = convertStringHourToIntAndMinutes(v1);
+            int endTime = convertStringHourToIntAndMinutes(v5);
 
-            y[t1]++;
-            y[t5 + 1]--;
+            y[startTime]++;
+            y[endTime + 1]--;
         }
 
         int i = 1;
@@ -76,26 +76,45 @@ public class meetingAssistant {
             i++;
         }
 
-        int c = 0;
-        int g = 0;
+        int count = 0;
+        int ansFound = 0;
 
         for (int j = 0; j < 1440; j++) {
             if (y[j] == 0) {
-                c++;
+                count++;
 
-                if (c == k) {
+                if (count == k) {
                     convertMinutesToHours(j - k + 1); // convertStringHourToIntAndMinutes this to (hh:mm)
-                    g = 1;
+                    ansFound = 1;
                     break;
                 }
             } else {
-                c = 0;
+                count = 0;
             }
         }
 
-        if (g == 0) {
+        
+
+        if (ansFound == 0) {
             System.out.println("-1");
         }
     }
 
+
+    
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

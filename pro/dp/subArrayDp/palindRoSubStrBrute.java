@@ -38,11 +38,14 @@ public class palindRoSubStrBrute {
             }
             i++;
         }
-
-        System.out.println(countPalindrom);
+        System.out.println();
+        System.out.println( countPalindrom);
     }
-    
-    
-
-
 }
+
+
+
+
+
+
+
