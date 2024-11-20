@@ -7,22 +7,19 @@ public class bottomViewTree {
      
         if (root == null) return new ArrayList<>();
 
-
         // Map to store the last node at each
         // horizontal distance (HD)
         Map<Integer, Integer> horizonDistMap = new TreeMap<>();
 
-
         // Queue to store nodes and their
         // horizontal distance
-        Queue<PairBottomView.Pair> que = new LinkedList<>();
+        Queue<PairBottomView> que = new LinkedList<>();
        
         // Start level order traversal with
           // root at HD 0
-        que.add(new PairBottomView.Pair(root, 0));
-       
+        que.add(new PairBottomView(root, 0));
+        
         while (!que.isEmpty()) {
-         
             // Get current node and its HD
             NodeBottomView curr = que.peek().node;
             int horizonDist = que.peek().horizonDist;
@@ -34,15 +31,14 @@ public class bottomViewTree {
 
             // Traverse the left subtree, HD - 1
             if (curr.left != null) {
-                que.add(new PairBottomView.Pair(curr.left, horizonDist - 1));
+                que.add(new PairBottomView(curr.left, horizonDist - 1));
             }
 
             // Traverse the right subtree, HD + 1
             if (curr.right != null) {
-                que.add(new PairBottomView.Pair(curr.right, horizonDist + 1));
+                que.add(new PairBottomView(curr.right, horizonDist + 1));
             }
         }
-
 
         // Extract bottom view nodes
           // from the map
@@ -77,13 +73,13 @@ public class bottomViewTree {
         root.left.right.right = new NodeBottomView(14);
         root.right.right = new NodeBottomView(25);
 
-
         ArrayList<Integer> result = bottomView(root);
-
-
+        System.out.println();
         for (int val : result) {
           System.out.print(val + " ");
       }
     }
-
 }
+
+
+
