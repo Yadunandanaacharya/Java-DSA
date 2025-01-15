@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class palindromeSubstr {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        String s = scanner.next();
+        // Scanner scanner = new Scanner(System.in);
+        String s = "abba";
         int n = s.length();
 
         boolean[][] dp = new boolean[n][n];
@@ -32,17 +32,24 @@ public class palindromeSubstr {
                 if (s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1]) {
                     dp[i][j] = true;
                 }
-                dp1[i][j] = dp1[i][j - 1] + dp1[i + 1][j] - dp1[i + 1][j - 1] + (dp[i][j] ? 1 : 0);
+                int val = dp1[i][j - 1] + dp1[i + 1][j] - dp1[i + 1][j - 1] + (dp[i][j] ? 1 : 0);;
+                dp1[i][j] = val;
             }
         }
 
-        int q = scanner.nextInt();
-        for (int i = 0; i < q; i++) {
-            int l = scanner.nextInt();
-            int r = scanner.nextInt();
-            System.out.println(dp1[l][r]);
-        }
+        System.out.println();
+        System.out.println(dp1[0][n-1]);
+        // int q = scanner.nextInt();
+        // for (int i = 0; i < q; i++) {
+        //     int l = scanner.nextInt();
+        //     int r = scanner.nextInt();
+        //     System.out.println(dp1[l][r]);
+        // }
 
-        scanner.close();
+        // scanner.close();
     }
 }
+
+
+
+

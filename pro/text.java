@@ -3,20 +3,15 @@ import java.util.*;
 
 public class text {
     public static void main(String[] args) {
-        System.out.println();
-        System.out.println(reverse("yadu"));
-    }
+        int num = 6; // Number of lines to print
+        char letter = 'A';
 
-    public static String reverse(String str){
-        StringBuilder strBuilder = new StringBuilder();
-        for(int i = str.length()-1; i >= 0 ; i--){
-            strBuilder.append(str.charAt(i));
+        for (int i = 1; i <= num; i++) {
+            for (int j = 0; j < i; j++) {
+                System.out.print(letter);
+            }
+            letter++;
+            System.out.println();
         }
-
-        return strBuilder.toString();
     }
 }
-
-
-
-
